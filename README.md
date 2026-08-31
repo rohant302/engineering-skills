@@ -199,4 +199,4 @@ Contributions of new engineering skills are welcome! When creating a new skill:
 ## 📄 License
 
 This repository is licensed under the [MIT License](LICENSE).
-Copyright (c) 2026 Rohan T.
+Copyright (c) 2026 Rohan.
