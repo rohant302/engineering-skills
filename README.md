@@ -1,11 +1,11 @@
 # 🛠️ Engineering Skills for AI Coding Agents
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![Skills Standard](https://img.shields.io/badge/Standard-SKILL.md-success.svg)](#-skill-format--structure)
+[![Skills Standard](https://img.shields.io/badge/Standard-SKILL.md-success.svg)](#skill-format-structure)
 [![Built with skills.sh](https://img.shields.io/badge/Built%20with-skills.sh-6E56CF.svg)](https://skills.sh/rohant302/engineering-skills)
 [![Supported PMs](https://img.shields.io/badge/Package%20Managers-npm%20%7C%20yarn%20%7C%20pnpm%20%7C%20bun-orange.svg)](#supported-package-managers)
 [![Cross-Platform](https://img.shields.io/badge/Platform-Windows%20%7C%20macOS%20%7C%20Linux-lightgrey.svg)](#cross-platform--monorepo-support)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](#-contributing-new-skills)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](#contributing-new-skills)
 
 A collection of battle-tested, deterministic, and safe **AI Agent Skills** designed for modern AI coding assistants (such as Google Antigravity, Claude Code, Cursor, Windsurf, and other agentic LLM workflows).
 
@@ -15,25 +15,25 @@ These skills give AI assistants clear guardrails, structured multi-step workflow
 
 ---
 
-## 📑 Table of Contents
+## <a id="table-of-contents"></a>📑 Table of Contents
 
-- [Overview](#-overview)
-- [Available Skills](#-available-skills)
+- [Overview](#overview)
+- [Available Skills](#available-skills)
   - [1. `dependency-updater`](#1-dependency-updater)
   - [2. `seo-auditor`](#2-seo-auditor)
-- [Skill Format & Structure](#-skill-format--structure)
-- [Installation & Setup](#-installation--setup)
+- [Skill Format & Structure](#skill-format-structure)
+- [Installation & Setup](#installation-setup)
   - [Google Antigravity](#google-antigravity)
   - [Claude Code](#claude-code)
-  - [Cursor / Windsurf / Generic AI Agents](#cursor--windsurf--generic-ai-agents)
+  - [Cursor / Windsurf / Generic AI Agents](#cursor-windsurf-generic-ai-agents)
   - [skills.sh CLI](#skillssh-cli)
-- [Design Principles](#-design-principles)
-- [Contributing New Skills](#-contributing-new-skills)
-- [License](#-license)
+- [Design Principles](#design-principles)
+- [Contributing New Skills](#contributing-new-skills)
+- [License](#license)
 
 ---
 
-## 🌟 Overview
+## <a id="overview"></a>🌟 Overview
 
 Large Language Models (LLMs) often make risky assumptions when performing engineering tasks — guessing package managers, hallucinating upgrade commands, ignoring peer-dependency conflicts, fabricating audit scores, or skipping build/test verifications.
 
@@ -47,18 +47,18 @@ This repository provides standardized, executable **Agent Skills** that:
 
 ---
 
-## 📦 Available Skills
+## <a id="available-skills"></a>📦 Available Skills
 
 | Skill | Description | Target Scope / Ecosystems | Status |
 | :--- | :--- | :--- | :---: |
 | [`dependency-updater`](./dependency-updater) | Safely updates project dependencies to latest compatible versions with automated verification, peer-dependency resolution, and cross-package-manager support. | `npm`, `yarn` (v1/v2+), `pnpm`, `bun` | ✅ Ready |
 | [`seo-auditor`](./seo-auditor) | Runs rigorous 5-category SEO audits across Technical, Content, Performance signals, Links, and Mobile/A11y with a 100-point rubric and impact-ranked fixes. | Live URLs, Local Source (Next.js/React/HTML), Hybrid | ✅ Ready |
 
-Have a skill idea? See [Contributing New Skills](#-contributing-new-skills) below — the table above grows with every PR.
+Have a skill idea? See [Contributing New Skills](#contributing-new-skills) below — the table above grows with every PR.
 
 ---
 
-### 1. `dependency-updater`
+### <a id="1-dependency-updater"></a><a id="dependency-updater"></a>1. `dependency-updater`
 
 > **Path**: [`dependency-updater/`](./dependency-updater)  
 > **Reference**: [`dependency-updater/references/package-managers.md`](./dependency-updater/references/package-managers.md)
@@ -85,7 +85,7 @@ A production-grade skill for upgrading JavaScript/TypeScript/Node.js dependencie
 
 ---
 
-### 2. `seo-auditor`
+### <a id="2-seo-auditor"></a><a id="seo-auditor"></a>2. `seo-auditor`
 
 > **Path**: [`seo-auditor/`](./seo-auditor)  
 > **Reference**: [`seo-auditor/references/checklist.md`](./seo-auditor/references/checklist.md)
@@ -111,7 +111,7 @@ A comprehensive SEO auditor that reviews technical signals, on-page content, per
 
 ---
 
-## 🏗️ Skill Format & Structure
+## <a id="skill-format-structure"></a><a id="skill-format--structure"></a>🏗️ Skill Format & Structure
 
 Each skill in this repository follows the standard Agent Skill directory layout:
 
@@ -140,11 +140,11 @@ The body that follows is plain Markdown — numbered workflow steps, explicit gu
 
 ---
 
-## 🚀 Installation & Setup
+## <a id="installation-setup"></a><a id="installation--setup"></a>🚀 Installation & Setup
 
 You can load these skills into your preferred AI agent environment:
 
-### Google Antigravity
+### <a id="google-antigravity"></a>Google Antigravity
 
 **Option A: Workspace-Specific (Recommended for project repos)**  
 Copy the desired skill folder into your workspace's `.agents/skills/` directory:
@@ -171,7 +171,7 @@ cp -r seo-auditor ~/.gemini/config/skills/
 
 ---
 
-### Claude Code
+### <a id="claude-code"></a>Claude Code
 
 Copy or symlink skill directories to your project's `.claude/skills/` or personal configuration:
 
@@ -183,7 +183,7 @@ cp -r /path/to/engineering-skills/seo-auditor .claude/skills/
 
 ---
 
-### Cursor / Windsurf / Generic AI Agents
+### <a id="cursor-windsurf-generic-ai-agents"></a><a id="cursor--windsurf--generic-ai-agents"></a>Cursor / Windsurf / Generic AI Agents
 
 You can reference individual skills in `.cursorrules`, `.windsurfrules`, or your agent's system prompt:
 
@@ -197,7 +197,7 @@ When auditing SEO, follow:
 
 ---
 
-### skills.sh CLI
+### <a id="skillssh-cli"></a><a id="skills-sh-cli"></a>skills.sh CLI
 
 This repository follows the open `SKILL.md` standard used by [skills.sh](https://skills.sh), allowing direct installation via CLI:
 
@@ -213,7 +213,7 @@ npx skills add rohant302/engineering-skills --skill seo-auditor
 
 ---
 
-## 🧭 Design Principles
+## <a id="design-principles"></a>🧭 Design Principles
 
 Every skill in this repo is expected to follow the same house rules:
 
@@ -225,7 +225,7 @@ Every skill in this repo is expected to follow the same house rules:
 
 ---
 
-## 🤝 Contributing New Skills
+## <a id="contributing-new-skills"></a>🤝 Contributing New Skills
 
 Contributions of new engineering skills are welcome! When creating a new skill:
 
@@ -233,11 +233,11 @@ Contributions of new engineering skills are welcome! When creating a new skill:
 2. **Author `SKILL.md`**: Include YAML frontmatter (`name`, `description`) and a comprehensive step-by-step workflow.
 3. **Include Guardrails**: Explicitly list actions the agent must _not_ take.
 4. **Provide References**: Place cheat sheets, CLI command matrices, checklists, and error-handling guides into a `references/` subdirectory.
-5. **Update README.md**: Add your new skill to the [Available Skills](#-available-skills) table above.
+5. **Update README.md**: Add your new skill to the [Available Skills](#available-skills) table above.
 
 ---
 
-## 📄 License
+## <a id="license"></a>📄 License
 
 This repository is licensed under the [MIT License](LICENSE).  
 Copyright (c) 2026 Rohan.
