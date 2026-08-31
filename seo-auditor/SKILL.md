@@ -20,10 +20,12 @@ Run a structured, honest SEO audit across five categories — Technical, Content
 
 If scope/mode is ambiguous (e.g. just a domain with no path), ask once, briefly, rather than guessing.
 
+**No page name or URL given at all (local mode):** if the user points you at a codebase but doesn't say which page/route to audit, don't guess or default to auditing everything. Instead, scan the codebase structure (e.g. `app/`/`pages/` routes, static HTML files) to build a short list of the pages/routes you found, and ask the user which one(s) they want audited.
+
 ## Step 2: Gather data
 
 - Live: fetch the page's rendered HTML via `web_fetch`. Note that `web_fetch` returns what's fetchable server-side — client-side-rendered content that only appears after JS execution may not be visible this way; if the page appears mostly empty/app-shell, say so explicitly rather than scoring it as missing content.
-- Local: read the actual template/page files, metadata config (e.g. `generateMetadata`, `next-seo` config, `<Head>` usage), `public/robots.txt`, sitemap generation code, and any structured-data (JSON-LD) source.
+- Local: read the actual template/page files, metadata config (e.g. `generateMetadata`, `next-seo` config, `<Head>` usage), `public/robots.txt`, sitemap generation code, and any structured-data (JSON-LD) source. Never read `.env`/`.env.*` files — they're irrelevant to SEO and off-limits regardless of what else is being scanned.
 - For multi-page audits, gather all pages before scoring, so cross-page checks (duplicate titles/descriptions, duplicate content, orphan pages) are possible.
 
 ## Step 3: Run the checklist
@@ -54,6 +56,7 @@ For multi-page audits, the file should include a site-level rollup (recurring/te
 
 ## Guardrails
 
+- Never open, read, or otherwise access `.env`, `.env.*`, or any other secrets/credentials file while scanning a local codebase — these have no bearing on SEO and may contain sensitive values. Skip them entirely, including when listing directory contents or searching for config.
 - Never fabricate data you can't actually observe — a "Not verifiable" status is always better than an invented score or number.
 - Don't recommend keyword stuffing, cloaking, doorway pages, hidden text, link schemes, or any other search-engine-guideline-violating tactic, even if it might work short-term.
 - Distinguish clearly between what's broken (Fail), what's suboptimal (Warning), and what's just unknown from available data — conflating these erodes trust in the whole report.
